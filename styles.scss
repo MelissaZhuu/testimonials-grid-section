@@ -1,0 +1,153 @@
+// Primary colors (card backgrounds)
+$violet: hsl(263, 55%, 52%);
+$grayish-blue: hsl(217, 19%, 35%);
+$blackish-blue: hsl(219, 29%, 14%);
+$white: hsl(0, 0%, 100%);
+
+// Neutral colors
+$light-grayish-blue: hsl(210, 46%, 95%); //background color
+$light-gray: hsl(0, 0%, 81%);
+$translucent-light-gray: hsla(0, 0%, 81%, 0.5);
+
+/* All text in each card is the same color (white or grayish-blue)
+   "Verified Graduate" is 50% opacity
+   "Quote text" is 70% opacity
+*/
+
+// Font size, family and weights
+$body: 13px;
+
+$font: "Barlow Semi Condensed", sans-serif;
+
+$light: 400;
+$regular: 500;
+$bold: 600;
+
+@mixin font-style($color, $thin, $thick) {
+    color: $color;
+    .testifier{
+        p {
+            font-size: 0.7rem;
+            font-weight: $thin;
+            opacity: 0.5;
+            &.name {
+                font-size: $body;
+                font-weight: $thick;
+                opacity: 1;
+            }
+        }
+    }
+    .content {
+        h1 {
+            font-size: 1.2rem;
+            font-weight: $thick;
+            padding-bottom: 1rem;
+        }
+        p {
+            font-weight: $thin;
+            font-size: $body;
+            opacity: 0.7;
+            line-height: 1.4;
+        }
+    }
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: $light-grayish-blue;
+    font-family: $font;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem 2.2rem 2rem 2.2rem;
+    margin: 1.5rem;
+    border-radius: 0.5rem;
+
+    .testifier {
+        img {
+            border-radius: 50%;
+            width: 1.8rem;
+            grid-area: profile-image;
+        }
+        p.name {
+            grid-area: testifier-name;
+        }
+        p {
+            grid-area: verified-grad;
+        }
+
+        display: grid;
+        grid-template-columns: 3rem 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "profile-image testifier-name"
+            "profile-image verified-grad";
+        align-items: center;
+    }
+}
+
+article.daniel-card {
+    background-color: $violet;
+    @include font-style($white, $light, $regular);
+    .testifier img {
+        border: 2px, solid, $translucent-light-gray;
+    }
+    .content {
+        z-index: 1;
+    }
+
+    position: relative;
+    .quote {
+        width: 6.5rem;
+        height: 6.5rem;
+        position: absolute;
+        top: 0;
+        right: 1.5rem;
+    }
+}
+
+article.jonathan-card {
+    background-color: $grayish-blue;
+    @include font-style($white, $light, $regular);
+}
+
+article.jeanette-card {
+    background-color: $white;
+    @include font-style($grayish-blue, $regular, $bold);
+}
+
+article.patrick-card {
+    background-color: $blackish-blue;
+    @include font-style($white, $light, $regular);
+    .testifier img {
+        border: 2px, solid, $violet;
+    }
+}
+
+article.kira-card {
+    background-color: $white;
+    @include font-style($grayish-blue, $regular, $bold);
+}
+
+.attribution {
+    font-size: 0.6rem;
+    text-align: center;
+    color: $grayish-blue;
+    a {
+        color: $violet;
+    }
+}
+
