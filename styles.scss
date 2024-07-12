@@ -100,12 +100,13 @@ article {
 }
 
 article.daniel-card {
+    grid-area: daniel-card;
     background-color: $violet;
     @include font-style($white, $light, $regular);
     .testifier img {
         border: 2px, solid, $translucent-light-gray;
     }
-    .content {
+    .testifier, .content {
         z-index: 1;
     }
 
@@ -120,16 +121,19 @@ article.daniel-card {
 }
 
 article.jonathan-card {
+    grid-area: jonathan-card;
     background-color: $grayish-blue;
     @include font-style($white, $light, $regular);
 }
 
 article.jeanette-card {
+    grid-area: jeanette-card;
     background-color: $white;
     @include font-style($grayish-blue, $regular, $bold);
 }
 
 article.patrick-card {
+    grid-area: patrick-card;
     background-color: $blackish-blue;
     @include font-style($white, $light, $regular);
     .testifier img {
@@ -138,6 +142,7 @@ article.patrick-card {
 }
 
 article.kira-card {
+    grid-area: kira-card;
     background-color: $white;
     @include font-style($grayish-blue, $regular, $bold);
 }
@@ -151,3 +156,32 @@ article.kira-card {
     }
 }
 
+
+// Desktop design
+@media (width > 1000px) {
+    body {
+        width: 100vw;
+        height: 100vh;
+        padding: 0;
+    }
+
+    main {
+        //margin: 5rem;
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "daniel-card daniel-card jonathan-card kira-card"
+            "jeanette-card patrick-card patrick-card kira-card";
+        gap: 2rem;
+    }
+
+    article {
+        margin: 0;
+    }
+
+    .attribution {
+        margin-top: 2rem;
+    }
+}

@@ -45,6 +45,7 @@ article .testifier p {
 }
 
 article.daniel-card {
+  grid-area: daniel-card;
   background-color: hsl(263, 55%, 52%);
   color: hsl(0, 0%, 100%);
   position: relative;
@@ -73,7 +74,7 @@ article.daniel-card .content p {
 article.daniel-card .testifier img {
   border: 2px, solid, hsla(0, 0%, 81%, 0.5);
 }
-article.daniel-card .content {
+article.daniel-card .testifier, article.daniel-card .content {
   z-index: 1;
 }
 article.daniel-card .quote {
@@ -85,6 +86,7 @@ article.daniel-card .quote {
 }
 
 article.jonathan-card {
+  grid-area: jonathan-card;
   background-color: hsl(217, 19%, 35%);
   color: hsl(0, 0%, 100%);
 }
@@ -111,6 +113,7 @@ article.jonathan-card .content p {
 }
 
 article.jeanette-card {
+  grid-area: jeanette-card;
   background-color: hsl(0, 0%, 100%);
   color: hsl(217, 19%, 35%);
 }
@@ -137,6 +140,7 @@ article.jeanette-card .content p {
 }
 
 article.patrick-card {
+  grid-area: patrick-card;
   background-color: hsl(219, 29%, 14%);
   color: hsl(0, 0%, 100%);
 }
@@ -166,6 +170,7 @@ article.patrick-card .testifier img {
 }
 
 article.kira-card {
+  grid-area: kira-card;
   background-color: hsl(0, 0%, 100%);
   color: hsl(217, 19%, 35%);
 }
@@ -198,4 +203,26 @@ article.kira-card .content p {
 }
 .attribution a {
   color: hsl(263, 55%, 52%);
+}
+
+@media (width > 1000px) {
+  body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+  }
+  main {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "daniel-card daniel-card jonathan-card kira-card" "jeanette-card patrick-card patrick-card kira-card";
+    gap: 2rem;
+  }
+  article {
+    margin: 0;
+  }
+  .attribution {
+    margin-top: 2rem;
+  }
 }/*# sourceMappingURL=styles.css.map */
