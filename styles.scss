@@ -131,6 +131,7 @@ article.jeanette-card {
     grid-area: jeanette-card;
     background-color: $white;
     @include font-style($grayish-blue, $regular, $bold);
+    box-shadow: 0 0.3rem 1rem 0 hsla(217, 19%, 35%, 0.2);
 }
 
 article.patrick-card {
@@ -146,6 +147,7 @@ article.kira-card {
     grid-area: kira-card;
     background-color: $white;
     @include font-style($grayish-blue, $regular, $bold);
+    box-shadow: 0 0.3rem 1rem 0 hsla(217, 19%, 35%, 0.2);
 }
 
 .attribution {
@@ -180,7 +182,7 @@ article.kira-card {
     }
 }
 
-// Desktop design
+// Desktop
 @media only screen and (width > 1200px) {
     body {
         height: 100vh;
