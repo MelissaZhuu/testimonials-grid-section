@@ -18,6 +18,7 @@ body {
 }
 
 article {
+  min-width: 12rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -205,14 +206,36 @@ article.kira-card .content p {
   color: hsl(263, 55%, 52%);
 }
 
-@media (width > 1000px) {
+@media only screen and (min-width: 700px) and (max-width: 1200px) {
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+    max-width: 50rem;
+  }
+  main article {
+    flex-grow: 1;
+    margin: 0;
+    max-width: 44rem;
+    align-self: stretch;
+  }
+  main article.jonathan-card, main article.jeanette-card {
+    flex-basis: 10rem;
+    max-width: 19rem;
+  }
+}
+@media only screen and (width > 1200px) {
   body {
-    width: 100vw;
     height: 100vh;
-    padding: 0;
+    min-height: 800px;
+    padding: 0 5rem;
   }
   main {
-    width: 80%;
+    width: 100%;
+    max-width: 75rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr 1fr;
