@@ -29,7 +29,7 @@ Users should be able to:
 
 Mobile:
 
-<img src="/images/mobile-screenshot.png" width="200"/>
+<img src="/images/mobile-screenshot.png" alt="mobile-screenshot" width="300"/>
 
 Desktop:
 
