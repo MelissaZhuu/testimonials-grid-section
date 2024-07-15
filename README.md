@@ -28,9 +28,11 @@ Users should be able to:
 ### Screenshot
 
 Mobile:
-![](/images/mobile-screenshot.png)
+
+<img src="/images/mobile-screenshot.png" width="200"/>
 
 Desktop:
+
 ![](/images/desktop-screenshot.png)
 
 ### Links
